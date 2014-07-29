@@ -1,0 +1,1 @@
+VC12X;build_hellomarm_vc12x;

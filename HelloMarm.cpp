@@ -29,7 +29,33 @@ int main()
         IwGxFlush();
         // Standard EGL-style flipping of double-buffers
         IwGxSwapBuffers();
+		int32 inputType = s3ePointerGetInt(S3E_POINTER_TYPE);
+		int32 key = s3eKeyboardGetState(s3eKeyA);
+		if (inputType == S3E_POINTER_TYPE_MOUSE) {
+			IwGxPrintString(20, 190, "mouse input detected");
+		}
+		else if (inputType == S3E_POINTER_TYPE_STYLUS) {
+			IwGxPrintString(20, 190, "touch input detected");
+		}
+		else {
+			IwGxPrintString(20, 190, "no input detected");
+		}
+		if (key & S3E_KEY_STATE_PRESSED)
+		{
+			// A key has just been pressed
+			IwGxPrintString(20, 180, "A key pressed");
+		}
+		else if (key & S3E_KEY_STATE_RELEASED)
+		{
+			// Back key has just been released
+			IwGxPrintString(20, 180, "A key released");
+		}
 
+		if (key & S3E_KEY_STATE_DOWN)
+		{
+			// Back key is currently held down
+			IwGxPrintString(20, 180, "A key held");
+		}
         // Sleep for 0ms to allow the OS to process events etc.
         s3eDeviceYield(0);
     }
