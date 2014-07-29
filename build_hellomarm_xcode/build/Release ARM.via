@@ -1,0 +1,13 @@
+--dll="/Users/dean/devel/marmalade/HelloMarm/build_hellomarm_xcode/build/Release ARM/HelloMarm.s3e"
+--data="/Users/dean/devel/marmalade/HelloMarm/data"
+--app-icf1="/Users/dean/devel/marmalade/HelloMarm/data/app.icf"
+--osx-ext-dll1="/Applications/Marmalade.app/Contents/extensions/PVRTexTool/lib/osx/libPVRTexTool.dylib"
+--config-txt1="/Applications/Marmalade.app/Contents/modules/iwgeom/docs/iwgeom.config.txt"
+--config-txt2="/Applications/Marmalade.app/Contents/modules/iwgl/docs/iwgl.config.txt"
+--config-txt3="/Applications/Marmalade.app/Contents/modules/iwgx/docs/iwgx.config.txt"
+--config-txt4="/Applications/Marmalade.app/Contents/modules/iwresmanager/docs/iwresmanager.config.txt"
+--config-txt5="/Applications/Marmalade.app/Contents/modules/iwutil/docs/iwutil.config.txt"
+--config-txt6="/Applications/Marmalade.app/Contents/s3e/s3e.config.txt"
+--config-txt7="/Users/dean/devel/marmalade/HelloMarm/data/app.config.txt"
+--config-txt8="/Applications/Marmalade.app/Contents/s3e/s3e.config.txt"
+--s3e-dir=/Applications/Marmalade.app/Contents/s3e
