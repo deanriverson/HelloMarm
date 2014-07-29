@@ -34,6 +34,20 @@ void drawPaddle(int16 pos) {
     IwGxDrawPrims(IW_GX_QUAD_LIST, NULL, 4);
 }
 
+int16 processKeyboard(int32 speed) {
+    int32 aKey = s3eKeyboardGetState(s3eKeyA);
+    int32 dKey = s3eKeyboardGetState(s3eKeyD);
+    
+    if (aKey & S3E_KEY_STATE_DOWN) {
+        return -speed;
+    } else if (dKey & S3E_KEY_STATE_DOWN) {
+        return speed;
+    } else {
+        return 0;
+    }
+
+}
+
 // Main entry point for the application
 int main()
 {
@@ -42,7 +56,8 @@ int main()
     IwGxLightingOff();
     IwGxSetColClear(0xa0, 0xc0, 0xff, 0xff);
     
-    int32 count = 0, speed = 3;
+    int32 paddlePos = 100, speed = 3;
+    int16 screenWidth = IwGxGetScreenWidth();
     
     // Loop forever, until the user or the OS performs some action to quit the app
     while (!s3eDeviceCheckQuitRequest())
@@ -55,40 +70,14 @@ int main()
         IwGxClear(IW_GX_COLOUR_BUFFER_F | IW_GX_DEPTH_BUFFER_F);
         
         // Your rendering/app code goes here.
-        drawPaddle((++count*speed) % 200);
+        paddlePos += processKeyboard(speed);
+        drawPaddle(paddlePos % screenWidth);
         
         // Standard EGL-style flush of drawing to the surface
         IwGxFlush();
         
         // Standard EGL-style flipping of double-buffers
         IwGxSwapBuffers();
-		int32 inputType = s3ePointerGetInt(S3E_POINTER_TYPE);
-		int32 key = s3eKeyboardGetState(s3eKeyA);
-		if (inputType == S3E_POINTER_TYPE_MOUSE) {
-			IwGxPrintString(20, 190, "mouse input detected");
-		}
-		else if (inputType == S3E_POINTER_TYPE_STYLUS) {
-			IwGxPrintString(20, 190, "touch input detected");
-		}
-		else {
-			IwGxPrintString(20, 190, "no input detected");
-		}
-		if (key & S3E_KEY_STATE_PRESSED)
-		{
-			// A key has just been pressed
-			IwGxPrintString(20, 180, "A key pressed");
-		}
-		else if (key & S3E_KEY_STATE_RELEASED)
-		{
-			// Back key has just been released
-			IwGxPrintString(20, 180, "A key released");
-		}
-
-		if (key & S3E_KEY_STATE_DOWN)
-		{
-			// Back key is currently held down
-			IwGxPrintString(20, 180, "A key held");
-		}
         // Sleep for 0ms to allow the OS to process events etc.
         s3eDeviceYield(0);
     }
