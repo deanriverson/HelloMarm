@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		059ECADF19885B4C00FC46B9 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059ECADD19885B4C00FC46B9 /* Paddle.cpp */; };
+		059ECAE2198889CE00FC46B9 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059ECAE0198889CE00FC46B9 /* Block.cpp */; };
 		A00000000000000000000018 /* PVRTexTool_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000019 /* PVRTexTool_interface.cpp */; };
 		A00000000000000000000300 /* HelloMarm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000301 /* HelloMarm.cpp */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		059ECADD19885B4C00FC46B9 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Paddle.cpp; path = ../Paddle.cpp; sourceTree = "<group>"; };
 		059ECADE19885B4C00FC46B9 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Paddle.h; path = ../Paddle.h; sourceTree = "<group>"; };
+		059ECAE0198889CE00FC46B9 /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = ../Block.cpp; sourceTree = "<group>"; };
+		059ECAE1198889CE00FC46B9 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = ../Block.h; sourceTree = "<group>"; };
 		B00000000000000000000010 /* PVRTexTool.mkf */ = {isa = PBXFileReference; explicitFileType = text; name = PVRTexTool.mkf; path = /Applications/Marmalade.app/Contents/extensions/PVRTexTool/PVRTexTool.mkf; sourceTree = "<absolute>"; };
 		B00000000000000000000014 /* PVRTexTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PVRTexTool.h; path = /Applications/Marmalade.app/Contents/extensions/PVRTexTool/h/PVRTexTool.h; sourceTree = "<absolute>"; };
 		B00000000000000000000016 /* PVRTexTool.defines.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = PVRTexTool.defines.txt; path = /Applications/Marmalade.app/Contents/extensions/PVRTexTool/interface/PVRTexTool.defines.txt; sourceTree = "<absolute>"; };
@@ -425,6 +428,8 @@
 		A0000000000000000000000b /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				059ECAE0198889CE00FC46B9 /* Block.cpp */,
+				059ECAE1198889CE00FC46B9 /* Block.h */,
 				059ECADD19885B4C00FC46B9 /* Paddle.cpp */,
 				059ECADE19885B4C00FC46B9 /* Paddle.h */,
 				B0000000000000000000000c /* Resources */,
@@ -1219,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00000000000000000000018 /* PVRTexTool_interface.cpp in Sources */,
+				059ECAE2198889CE00FC46B9 /* Block.cpp in Sources */,
 				059ECADF19885B4C00FC46B9 /* Paddle.cpp in Sources */,
 				A00000000000000000000300 /* HelloMarm.cpp in Sources */,
 			);

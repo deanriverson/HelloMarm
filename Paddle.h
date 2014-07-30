@@ -11,10 +11,12 @@
 
 #include <iostream>
 
-#include "s3e.h"
-#include "IwDebug.h"
-#include "IwGx.h"
+#include "Block.h"
 
-void drawPaddle(int16);
+class Paddle : public Block {
+public:
+    Paddle();
+    void draw(int16 pos);
+};
 
 #endif /* defined(__HelloMarm__Paddle__) */
